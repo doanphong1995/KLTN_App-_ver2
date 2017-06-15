@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+      <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>BomShop</ion-title>
+    <ion-buttons end>
+      <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="order">
+  <div [hidden]="!loading" text-center padding>
+    <ion-spinner></ion-spinner>
+  </div>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content pullingText="Refresh page...">
+    </ion-refresher-content>
+  </ion-refresher>
+
+  <ion-slides>
+    <ion-slide *ngFor="let event of listevent">
+      <div class="slider">
+        <img (click)="openProductInEvent(event.id)" src="{{event.eventPictureUrl}}">
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="cate">
+    <ion-card>
+      <div class="title_cate">
+        <h3>Categories</h3>
+      </div>
+    </ion-card>
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col width-50 *ngFor="let category of listcategory">
+        <div class="item_card">
+          <img (click)="openProductByCategory(category.id)" src="{{category.categoryPictureUrl}}">
+          <p style="text-transform: uppercase">{{category.categoryName}}</p>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

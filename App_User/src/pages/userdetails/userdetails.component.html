@@ -1,0 +1,93 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+            <ion-icon name="menu"></ion-icon>
+         </button>
+        <ion-title>Information</ion-title>
+        <ion-buttons end>
+            <div class="icon_close">
+                <ion-icon (click)="goBack()" name="close"></ion-icon>
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <div class="logo_info">
+        <img src="http://icons.iconarchive.com/icons/custom-icon-design/silky-line-user/512/user-info-icon.png">
+    </div>
+    <div class="input_info">
+        <form id="infoUserForm" #infoUserForm="ngForm" (ngSubmit)="UpdateUser(infoUserForm.value)">
+            <ion-list *ngIf="Users">
+                <ion-item>
+                    <ion-label floating>Fullname</ion-label>
+                    <ion-input type="text" ngModel name="fullName" [(ngModel)]="Users.fullName"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Username</ion-label>
+                    <ion-input type="text" ngModel name="userName" [(ngModel)]="Users.userName"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label>Date of birth</ion-label>
+                    <ion-datetime displayFormat="DD-MMM-YYYY" name="dateOfBirth" [(ngModel)]="Users.dateOfBirth"></ion-datetime>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Email</ion-label>
+                    <ion-input type="email" ngModel name="email" [(ngModel)]="Users.email"></ion-input>
+                </ion-item>
+
+                <ion-item>
+                    <ion-label floating>Phone</ion-label>
+                    <ion-input type="phone" ngModel name="phone" [(ngModel)]="Users.phone"></ion-input>
+                </ion-item>
+
+                <div class="pmm_add">
+                    <p>List address</p>
+                </div>
+
+                <ion-list radio-group id="listAddressInView">
+                    <ion-item-sliding *ngFor="let add of listAddress;let i=index">
+                        <ion-item text-wrap>
+                            <ion-label>{{add}}</ion-label>
+                            <ion-radio (ionSelect)="changeAddIndex(i)" [value]="i" [checked]="i === addIndex"></ion-radio>
+                        </ion-item>
+                        <ion-item-options>
+                            <div class="delete">
+                                <button (click)="removeListAddress(i)" color="danger" ion-button icon-left>
+                                    <ion-icon name="trash"></ion-icon>
+                                    Delete
+                                </button>
+                            </div>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+            </ion-list>
+        </form>
+
+        <div class="add_add">
+            <a (click)="AddAddress()">
+                <ion-icon style="color: #448AFF" name="ios-add-circle-outline"></ion-icon>Add another address</a>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-50>
+                <div class="btn_update">
+                    <button ion-button default="true" type="submit" form="infoUserForm">Update</button>
+                </div>
+            </ion-col>
+
+            <ion-col width-50>
+                <div class="btn_logOut">
+                    <button ion-button default="true" type="submit" (click)="logOut()">Log Out</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

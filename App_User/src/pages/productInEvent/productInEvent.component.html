@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Product In Event</ion-title>
+        <ion-buttons end>
+            <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-searchbar [(ngModel)]="search">
+        </ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="listproductInEvent">
+    <ion-list>
+        <ion-item-group [hidden]="loading">
+            <a ion-item *ngFor="let product of listGetArray" (click)="ProductDetail(product.productId.id)">
+                <span class="item-text-center">
+                    <div class="img_detail">
+                        <img width="20%" src="{{product.productId.productPictureUrl}}">
+                    </div>
+                </span>
+                
+                <h2>{{product.productId.productName}}</h2>
+                <p>{{product.productId.productPrice * product.discount | currency:'USD':true:'1.2-2'}}</p>
+                <button item-right ion-button icon-only default>
+                    <ion-icon name="cart"></ion-icon>
+                </button>
+            </a>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-menu [content]="content">
+  <ion-header>
+    <div class="header_avatar">
+      <img src="http://sv1.upsieutoc.com/2017/05/17/DSCN5052.png">
+    </div>
+    <ion-toolbar>
+      <div class="account_name" *ngFor="let user of userLogin">
+        <ion-title *ngIf="user!=null">{{user}}</ion-title>
+        <ion-title *ngIf="user==null">Please login</ion-title>
+      </div>
+
+      <div class="account_name">
+        <ion-title *ngIf="!isLogin">Please choose account to login</ion-title>
+      </div>
+
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item (click)="openPage('OrderPage')">
+        <ion-icon name="home"></ion-icon>
+        <div class="nav_title">Home</div>
+      </button>
+
+      <button menuClose ion-item (click)="openCart()">
+        <ion-icon name="cart"></ion-icon>
+        <div class="nav_title">Cart</div>
+        <ion-badge item-right>{{cartItemCount}}</ion-badge>
+      </button>
+
+      <button menuClose ion-item (click)="openAboutModal()">
+         <ion-icon name="refresh"></ion-icon>
+        <div class="nav_title">History</div>
+      </button>
+
+      <button menuClose ion-item>
+        <ion-icon name="md-flame" style="color:red"></ion-icon>
+        <div class="nav_title" style="color:red">Need for day</div>
+      </button>
+
+      <button menuClose ion-item (click)="openUserDetail()">
+        <ion-icon name="contact"></ion-icon>
+        <div class="nav_title">Account</div>
+      </button>
+
+      <div class="support">
+        <p style="color:#D32F2F"><strong>SUPPORT</strong></p>
+        <p>Hotline: 0973.892.017</p>
+        <p>Email: bomshop@kltn.com</p>
+      </div>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<ion-nav id="nav" [root]="rootPage" #content swipeBackEnabled="false">
+</ion-nav>

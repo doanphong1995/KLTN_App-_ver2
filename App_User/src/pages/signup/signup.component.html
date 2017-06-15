@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>SignUp</ion-title>
+    <ion-buttons end>
+      <div class="icon_close">
+        <ion-icon (click) = "goBack()" name="close"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="signup">
+  <div class="logo_signup">
+    <img src="http://www.aupairinamerica.com/img/Apply-Now-icon.png">
+  </div>
+
+  <div class="input_signup">
+    <ion-list>
+      <ion-item>
+        <ion-label floating>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Email</ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="number"></ion-input>
+      </ion-item>
+
+      <ion-item text-wrap>
+        <ion-label floating>Address</ion-label>
+        <ion-textarea type="text"></ion-textarea>
+      </ion-item>
+      <ion-item></ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col width-100>
+        <div class="button_signup">
+          <button ion-button default="true" (click)="AccountInfo()">SIGN UP</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

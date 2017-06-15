@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Cart</ion-title>
+    <ion-buttons end>
+      <div class="icon_close">
+        <ion-icon (click)="goBack()" name="close"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="cart">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of cart">
+      <ion-item>
+        <span class="item-text-center">
+          <div class="img_item">
+               <img width="20%" src="{{item.productPictureUrl}}">
+          </div>
+          </span>
+        <h2><b>{{item.productName}}</b></h2>
+        <div class="list">
+          <div class="price">
+            <p><b>{{item.productPrice}} x{{item.quantity}}</b></p>
+          </div>
+
+          <div class="cart-plus-minus f-left">
+            <div style="cursor:pointer" class="dec qtybutton" (click)="minus(item)">-</div>
+            <input type="text" [value]="item.quantity" name="qty" id="qty" class="cart-plus-minus-box">
+            <div style="cursor:pointer" class="inc qtybutton" (click)="add(item)">+</div>
+          </div>
+
+        </div>
+      </ion-item>
+      <ion-item-options>
+        <div class="delete">
+          <button (click)="removeFromCart(index, item)" color="danger" ion-button icon-left>
+          <ion-icon name="trash"></ion-icon>
+          Delete
+        </button>
+        </div>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col width-50>
+        <b>Total:</b>
+      </ion-col>
+      <ion-col width-50 text-right>
+        <b style="color:red">{{totalCost}}</b>
+      </ion-col>
+
+
+      <ion-col width-100>
+        <div class="button_add">
+          <button (click)="CheckOut1(cart)" ion-button default="true">CHECKOUT PROCEED</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

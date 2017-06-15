@@ -1,0 +1,152 @@
+.toolbar-background.toolbar-background-md{
+    background: transparent;
+}
+
+.account_name {
+    margin-top: -3%;
+}
+
+span.button-inner {
+    color: #FFFFFF;
+}
+
+.header_avatar {
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 3%;
+}
+
+ion-title.title.title-md {
+    text-align: center;
+}
+
+ion-header.header.header-md {
+    background-image: url("http://eskipaper.com/images/pink-flower-background-1.jpg");
+}
+
+.nav_title {
+    display: -webkit-inline-box;
+    padding-left: 10%;
+}
+
+.support {
+    margin-left: 5%;
+}
+
+ion-slides.slides.slides-md.slides-0 {
+    height: 40%;
+}
+
+ion-card.card.card-md {
+    width: 100%;
+    margin-left: 0%;
+    margin-top: 0%;
+    background: #BDBDBD;
+    height: 45px;
+}
+
+.title_cate h3 {
+    margin: 2px 0;
+    font-size: 1.6rem;
+    font-weight: normal;
+    color: #222;
+    text-align: center;
+    align: center;
+    margin-top: 14px;
+    text-transform: uppercase;
+}
+
+.item_card {
+    height: 96%;
+    margin-left: -5%;
+    margin-right: -5%;
+    margin-top: -4%;
+}
+
+.item_card img {
+    width: 100%;
+    height: 75%;
+}
+.item_card p {
+    font-size: 17px;
+    text-align: center;
+    margin-top: 5%;
+}
+
+ion-grid.grid {
+    margin-top: -3%;
+}
+
+.list select{
+    float: right;
+}
+
+.list-md .item-input:last-child {
+    border-bottom: 0px solid #fff;
+}
+
+label.item.item-input.item-select {
+    margin-top: -3%;
+}
+
+.button_add button{
+    width: 100%;
+}
+
+.cart-plus-minus {
+  border: 1px solid #cccccc;
+  height: 25px;
+  text-align: center;
+  width: 90px;
+  color: #666666;
+}
+
+.qtybutton {
+  background: #cccccc none repeat scroll 0 0;
+  height: 100%;
+  width: 30%;
+}
+
+.dec.qtybutton {
+  float: left;
+}
+
+.inc.qtybutton {
+  float: right;
+}
+
+input.cart-plus-minus-box {
+  height: 100%;
+  margin-bottom: 0;
+  padding: 0;
+  text-align: center;
+  width: 40%;
+}
+
+.cart-plus-minus.f-left {
+    margin-top: 3%;
+    margin-left: 30%;
+}
+
+.list .price p{
+    color: red;
+    margin-top: 2%;
+}
+
+span.item-text-center {
+    margin-top: 1%;
+}
+
+span.item-text-center .img_item img{
+    width: 75px;
+    height: 75px;
+}
+
+.icon_close{
+    margin: 0; 
+    margin-right: 10px;
+    font-size: 2.4rem;
+    font-weight: normal;
+    text-align: left;
+    color: black;
+}

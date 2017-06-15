@@ -1,0 +1,46 @@
+.process {
+    margin-top: 15%;
+    margin-bottom: 8%;
+}
+
+.process img {
+    position:absolute;
+    left: 0;
+    right: 0;
+    margin:0 auto;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.info_order{
+    margin-left: -43%;
+}
+
+.info_order p{
+    font-size: inherit;
+}
+
+.info_method{
+    margin-left: -43%;
+}
+
+.info_method p{
+    font-size: inherit;
+}
+
+.info_list{
+    margin-left: -43%;
+}
+
+.info_list p{
+    font-size: inherit;
+}
+
+.info_total{
+    margin-left: -43%;
+    display: flex;
+}
+
+.info_total p{
+    font-size: inherit;
+}

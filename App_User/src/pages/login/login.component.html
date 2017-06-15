@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+    <ion-buttons end>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login">
+  <div class="logo_login">
+    <img src="https://d13yacurqjgara.cloudfront.net/users/40000/screenshots/1172157/dribbble-dog-logo_1x.png">
+  </div>
+  <form id="signForm" #signForm="ngForm" (ngSubmit)="doLogin(signForm.value)">
+    <div class="input_login">
+      <ion-list>
+        <ion-item *ngIf = "isError">
+          <ion-label floating>aaaaaaaaa</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Username</ion-label>
+          <ion-input type="text" ngModel name="userName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" ngModel name="passWord"></ion-input>
+        </ion-item>
+        <ion-item></ion-item>
+
+      </ion-list>
+
+      <div class="no_account">
+        <a (click)="SignUp()">Create an accout</a>
+      </div>
+
+      <div class="forgot_password">
+        <a (click)="Password()" style=color:red>Forgot your password?</a>
+      </div>
+
+    </div>
+  </form>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col width-100>
+        <div class="button_login">
+          <button ion-button default="true" type="submit" form="signForm">LOGIN</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

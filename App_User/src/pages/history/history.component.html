@@ -1,0 +1,46 @@
+<ion-header>
+    <ion-navbar side="left">
+        <button menuToggle ion-button icon-only>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>History</ion-title>
+        <ion-buttons end>
+            <div class="icon_close">
+                <ion-icon (click)="goBack()" name="close"></ion-icon>
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="history">
+    <ion-list>
+        <ion-item-group [hidden]="loading">
+            <a ion-item (click)=Detail()>
+                <div class="info_order">
+                    <p><b>Name: Doan Van Thanh Phong</b></p>
+                    <p>OrderID: 51948e86c25f4b1d1c0d303c</p>
+                    <p>Order date: 25/05/2017</p>
+                    <p>Status: <b style="color:green">Complete</b></p>
+                </div>
+            </a>
+
+            <a ion-item>
+                <div class="info_order">
+                    <p><b>Name: Doan Van Thanh Phong</b></p>
+                    <p>OrderID: 51948e86c25f4b1d1c0d303c</p>
+                    <p>Order date: 25/05/2017</p>
+                    <p>Status: <b style="color:blue">Delivering</b></p>
+                </div>
+            </a>
+
+            <a ion-item>
+                <div class="info_order">
+                    <p><b>Name: Doan Van Thanh Phong</b></p>
+                    <p>OrderID: 51948e86c25f4b1d1c0d303c</p>
+                    <p>Order date: 25/05/2017</p>
+                    <p>Status: <b style="color:green">Complete</b></p>
+                </div>
+            </a>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

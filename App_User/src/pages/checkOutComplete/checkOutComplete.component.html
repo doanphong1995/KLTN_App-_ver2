@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Complete Order</ion-title>
+    <ion-buttons end>
+      <div class="icon_close">
+        <ion-icon (click)="goBack()" name="close"></ion-icon>
+      </div>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="completeOrder">
+  <div class="logo_ok">
+    <img src="http://www.i2clipart.com/cliparts/d/2/f/9/clipart-dwcheckyes-complete-512x512-d2f9.png">
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-row>
+      <ion-col width-100>
+        <div class="button_add">
+          <button (click)="ComeBack()" ion-button default="true">CONTINUE SHOPPING</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Product Detail</ion-title>
+    <ion-buttons end>
+      <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content *ngFor="let product of listproduct">
+  <ion-item>
+    <div class="img_product">
+      <img src="{{product.productPictureUrl}}">
+    </div>
+  </ion-item>
+
+  <ion-item>
+    <div class="info">
+      <p style="float: left; color: red">{{product.productPrice | currency:'USD':true:'1.2-2'}}</p>
+      <p style="float: right; color:green" *ngIf="product.quantityInStock >0">Còn hàng</p>
+      <p style="float: right; color:red" *ngIf="!product.quantityInStock >0">Hết hàng</p>
+
+    </div>
+  </ion-item>
+
+  <ion-item text-wrap>
+    <div class="productDescription" [innerHTML]="product.productDescription">
+    </div>
+  </ion-item>
+</ion-content>
+
+<ion-footer *ngFor="let product of listproduct">
+  <ion-toolbar>
+    <ion-row>
+      <ion-col width-100>
+        <div class="button_add">
+          <button (click)="addItemToCart(product)" ion-button default="true">ADD TO CART</button>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

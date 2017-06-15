@@ -1,0 +1,87 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Check Out</ion-title>
+        <ion-buttons end>
+            <div class="icon_close">
+                <ion-icon (click)="goBack()" name="close"></ion-icon>
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="productincart">
+    <ion-list radio-group>
+        <ion-item>
+            <div class="process">
+                <img src="http://sv1.upsieutoc.com/2017/05/22/checkOut3.png">
+            </div>
+        </ion-item>
+
+        <ion-item text-wrap *ngIf="Users">
+            <div class="info_order">
+                <p><b>Receiver information</b></p>
+                <p>Receiver: {{Users.fullName}}</p>
+                <p>Phone: {{Users.phone}}</p>
+                <p style="text-align: justify" *ngIf="addressOrder">Address: {{addressOrder}}</p>
+            </div>
+        </ion-item>
+
+        <ion-item text-wrap>
+            <div class="info_method">
+                <p><b>Method to pay</b></p>
+                <p>Cash on Delivery</p>
+            </div>
+        </ion-item>
+
+        <ion-item text-wrap>
+            <div class="info_list">
+                <p><b>Infomation of order</b></p>
+            </div>
+        </ion-item>
+
+        <a ion-item *ngFor="let product of listProductOrder">
+          <span class="item-text-center">
+               <img width="20%" src="{{product.productPictureUrl}}">
+          </span>
+          
+          <h2>{{product.productName}}</h2><p>{{product.productPrice}}$ x {{product.quantity}}</p>
+      </a>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-50>
+                <b>Ship</b>
+            </ion-col>
+            <ion-col width-50 text-right>
+                <b style="color: red">5$</b>
+            </ion-col>
+
+            <ion-col width-50>
+                <b>Total product</b>
+            </ion-col>
+            <ion-col width-50 text-right *ngIf="totalCost">
+                <b style="color: red">{{totalCost | currency:'USD':true:'1.2-2'}}</b>
+            </ion-col>
+
+            <ion-col width-50>
+                <b>Total</b>
+            </ion-col>
+            <ion-col width-50 text-right *ngIf="costFinal">
+                <b style="color: red">{{costFinal | currency:'USD':true:'1.2-2'}}</b>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col width-100>
+                <div class="button_add">
+                    <button (click)="Complete()" ion-button default="true">ORDER NOW</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

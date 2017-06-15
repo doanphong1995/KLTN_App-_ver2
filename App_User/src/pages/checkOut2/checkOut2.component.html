@@ -1,0 +1,55 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Check Out</ion-title>
+        <ion-buttons end>
+            <div class="icon_close">
+                <ion-icon (click)="goBack()" name="close"></ion-icon>
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="productincart">
+    <ion-list radio-group>
+        <ion-item>
+            <div class="process">
+                <img src="http://sv1.upsieutoc.com/2017/05/22/checkou2.png">
+            </div>
+        </ion-item>
+
+        <p style="text-align: center">Choose the method to pay</p>
+
+        <ion-item>
+            <ion-label>Cash on Delivery</ion-label>
+            <ion-radio value="method1" checked></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Credit or Debit Card</ion-label>
+            <ion-radio value="method2"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Local ATM card</ion-label>
+            <ion-radio value="method3"></ion-radio>
+        </ion-item>
+        <ion-item>
+            <ion-label>Online Installment</ion-label>
+            <ion-radio value="method4"></ion-radio>
+        </ion-item>
+
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-100>
+                <div class="button_add">
+                    <button (click)="ContinueCP()" ion-button default="true">CONTINUE</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

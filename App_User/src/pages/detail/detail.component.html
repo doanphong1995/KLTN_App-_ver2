@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Mom's Flower</ion-title>
+        <ion-buttons end>
+            <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+        </ion-buttons>
+    </ion-navbar>
+
+    <ion-toolbar>
+        <ion-searchbar [(ngModel)]="search">
+        </ion-searchbar>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="listproduct">
+    <ion-list>
+        <ion-item-group [hidden]="loading">
+            <a ion-item *ngFor="let product of listproduct | productSearch:search" (click)="openProductDetail(product.id)">
+                <span class="item-text-center">
+                    <div class="img_detail">
+                        <img width="20%" src="{{product.productPictureUrl}}">
+                    </div>
+                </span>
+                
+                <h2>{{product.productName}}</h2><p>{{product.productPrice | currency:'USD':true:'1.1-2'}}</p>
+                <button item-right ion-button icon-only default>
+                      <ion-icon name="eye"></ion-icon>
+                </button>
+            </a>
+        </ion-item-group>
+    </ion-list>
+</ion-content>

@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Add Address</ion-title>
+        <ion-buttons end>
+            <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="address">
+    <div class="logo_add">
+        <img src="http://www.syrclean.com/Assets/User/9790-AddressSymbol.png">
+    </div>
+    <form id="addressForm" #addressForm="ngForm" (ngSubmit)="AddAddress(addressForm.value)">
+        <ion-item text-wrap>
+            <ion-label floating>Address</ion-label>
+            <ion-textarea type="text" value="" name="address" ngModel></ion-textarea>
+        </ion-item>
+    </form>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-100>
+                <div class="button_add">
+                    <button (click)="AddAddress(address_added)" ion-button default="true" form="addressForm" type="submit">ADD ADDRESS</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

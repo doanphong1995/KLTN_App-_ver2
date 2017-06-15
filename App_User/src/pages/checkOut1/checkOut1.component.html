@@ -1,0 +1,72 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Check Out</ion-title>
+        <ion-buttons end>
+            <div class="icon_close">
+                <ion-icon (click)="goBack()" name="close"></ion-icon>
+            </div>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="productincart">
+    <ion-list>
+        <ion-item>
+            <div class="process">
+                <img src="http://sv1.upsieutoc.com/2017/05/22/checkou1-Copy.png">
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Fullname</ion-label>
+            <ion-input id="fullName" type="text" value="Doan Van Thanh Phong"></ion-input>
+        </ion-item>
+
+        <div class="phone">
+            <ion-item>
+                <ion-label floating>Phone</ion-label>
+                <ion-input id="number" type="number" value="0973892017"></ion-input>
+            </ion-item>
+        </div>
+        <div class="choose_add">
+            <p> Choose address to delivery</p>
+        </div>
+
+        <ion-list radio-group id="listAddressInView">
+            <ion-item-sliding *ngFor="let add of listAddress;let i=index">
+                <ion-item text-wrap>
+                    <ion-label>{{add}}</ion-label>
+                    <ion-radio (ionSelect)="changeAddIndex(i)" [value]="i" [checked]="i === addIndex"></ion-radio>
+                </ion-item>
+                <ion-item-options>
+                    <div class="delete">
+                        <button (click)="removeListAddress(i)" color="danger" ion-button icon-left>
+                    <ion-icon name="trash"></ion-icon>
+                        Delete
+                    </button>
+                    </div>
+                </ion-item-options>
+            </ion-item-sliding>
+        </ion-list>
+    </ion-list>
+
+    <div class="add_add">
+        <a (click)="AddAddress()">
+            <ion-icon style="color: #448AFF" name="ios-add-circle-outline"></ion-icon>Add another address</a>
+    </div>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-100>
+                <div class="button_add">
+                    <button (click)="ContinueCP()" ion-button default="true">CONTINUE</button>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>

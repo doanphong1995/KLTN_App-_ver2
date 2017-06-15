@@ -1,0 +1,81 @@
+<ion-header>
+    <ion-navbar>
+        <button menuToggle ion-button icon-only>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>DETAIL</ion-title>
+        <ion-buttons end>
+            <cart-indicator (wasClicked)="openCart()"></cart-indicator>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="listorder">
+    <ion-list>
+        <ion-item>
+            <div class="order_detail">
+                <p><b>OrderID: 51948e86c25f4b1d1c0d303c</b></p>
+                <p>Order date: 25/05/2017</p>
+                <p>Status: <b style="color:green">Complete</b></p>
+            </div>
+        </ion-item>
+
+        <ion-item text-wrap>
+            <div class="order_address">
+                <p><b>Address delivery</b></p>
+                <p>Name: Doan Van Thanh Phong</p>
+                <p>Address: Delight someone special this spring with a fresh cut arrangement of stunning blooms</p>
+            </div>
+        </ion-item>
+
+        <ion-item>
+            <div class="order_method">
+                <p><b>Method receive</b></p>
+                <p>Cash on delivery</p>
+            </div>
+        </ion-item>
+
+        <p style="font-size: large; margin-left: 6%;">Information order</p>
+
+        <a ion-item>
+          <span class="item-text-center">
+               <img width="20%" src="https://static.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg">
+          </span> 
+          <h2>LET ME LOVE YOU</h2><p>20.3$ x5</p>
+      </a>
+
+        <a ion-item>
+          <span class="item-text-center">
+               <img width="20%" src="https://static.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg">
+          </span> 
+          <h2>LET ME LOVE YOU</h2><p>20.3$ x5</p>
+      </a>
+
+        <a ion-item>
+          <span class="item-text-center">
+               <img width="20%" src="https://static.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg">
+          </span> 
+          <h2>LET ME LOVE YOU</h2><p>20.3$ x5</p>
+      </a>
+    </ion-list>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-row>
+            <ion-col width-50>
+                <b>Ship</b>
+            </ion-col>
+            <ion-col width-50 text-right>
+                <b style="color: red">5$</b>
+            </ion-col>
+
+            <ion-col width-50>
+                <b>Total</b>
+            </ion-col>
+            <ion-col width-50 text-right>
+                <b style="color: red">100$</b>
+            </ion-col>
+        </ion-row>
+    </ion-toolbar>
+</ion-footer>
